@@ -13,6 +13,7 @@ from diferent accounts.
 
 **NOTICE**: GPG is assumed to be installed and configured for the current user.
 
+### Bash
 Copy the `shell-secrets.sh` file anywhere in your disk. Add the following line in your profile shell script:
 
 ```
@@ -27,6 +28,15 @@ export PS1='... \e[31m$SECRET_LOGIN\e[0m ...'
 ```
 
 The variable `$SECRET_LOGIN` keeps the list of account names being used in the current shell.
+
+### Zsh
+Use `shell-secrets.zsh` instead of `shell-secrets.sh`. 
+
+If you use [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) you could create a new plugin directory `~/.oh-my-zsh/plugins/shellsecrets`,
+and copy or symlink `shell-secrets.zsh` to `~/.oh-my-zsh/plugins/shellscripts/shellsecrets.plugin.zsh`. 
+You can then enable the new plugin by adding `shellscripts` to the `plugins` parameter in your `~/.zshrc` file.
+
+The zsh version has an extra function called `showsecrets` which displays the currently enabled secret parameters, but not their values.
 
 ## Usage
 
